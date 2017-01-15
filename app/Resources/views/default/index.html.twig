@@ -1,45 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <!-- Navigation -->
-    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-            <li class="sidebar-brand">
-                <a href="#top" onclick=$("#menu-close").click();>Start Bootstrap</a>
-            </li>
-            <li>
-                <a href="#top" onclick=$("#menu-close").click();>Home</a>
-            </li>
-            <li>
-                <a href="#about" onclick=$("#menu-close").click();>About</a>
-            </li>
-            <li>
-                <a href="#services" onclick=$("#menu-close").click();>Services</a>
-            </li>
-        </ul>
-    </nav>
+    <div class="container text-center">
+        <header class="header">
+            <h1 class="text-color-white" id="h1">Convertisseur de monaie</h1>
+            <h2 class="text-color-white">Créé par Arthur de Barbanson</h2>
+        </header>
 
-    <!-- Header -->
-    <header id="top" class="header">
-        <div class="text-vertical-center">
-            <h1>Convertisseur de monaie</h1>
-            <h3>Créé par Arthur de Barbanson</h3>
-            <br>
-            <a href="#about" class="btn btn-dark btn-lg">C'est parti !</a>
-        </div>
-    </header>
-
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-
-                    <form name="ucc" method="get" action="{{ path('convert') }}">
-                        <input type="text" name="Amount" value="1" >
-                        <select class="uccinpts" name="From">
+        <div id="contenu">
+            <form name="ucc" method ="post" id="formConvert">
+                <div class="row margin">
+                    <div class="col-xs-6">
+                        <select class="form-control" name="From" id="from">
                             <option value="EUR" selected="">Euro - EUR</option>
                             <option value="USD">United States Dollars - USD</option>
                             <option value="GBP">United Kingdom Pounds - GBP</option>
@@ -171,7 +143,9 @@
                             <option value="XPD">Palladium Ounces - XPD</option>
                             <option value="EUR" class="hilite">Click for every world currency &gt;</option>
                         </select>
-                        <select class="uccinpts" name="To">
+                    </div>
+                    <div class="col-xs-6">
+                        <select class="form-control col-xs-6 col-sm-6" id="to" name="To">
                             <option value="USD" selected="">United States Dollars - USD</option>
                             <option value="EUR">Euro - EUR</option>
                             <option value="GBP">United Kingdom Pounds - GBP</option>
@@ -302,47 +276,26 @@
                             <option value="XPT">Platinum Ounces - XPT</option>
                             <option value="XPD">Palladium Ounces - XPD</option>
                         </select>
-                        <input type="submit" value="Convertir" class="btn btn-sm btn-success">
-                    </form>
+                    </div>
                 </div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
-                    </h4>
-                    <p>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <input type="number" id="amount" name="Amount" value="1" class="form-control" min="1" required >
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text"  id="resultat" class="form-control" disabled >
+                    </div>
                 </div>
+                <div class=" col-xs-12 form-group margin-button">
+                    <input type="submit" value="Convertir" class="btn btn-sm btn-success">
+                </div>
+            </form>
+            <div class="row col-xs-12">
+                <div id="conversion"></div>
             </div>
         </div>
-        <a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
-    </footer>
+    </div>
+
 
 {% endblock %}

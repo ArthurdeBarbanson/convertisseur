@@ -2,3 +2,7 @@
 convert:
     path:     /convert
     defaults: { _controller: AppBundle:Convertisseur:convert }
+
+index:
+    path:     /
+    defaults: { _controller: AppBundle:Convertisseur:index }

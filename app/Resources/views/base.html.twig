@@ -32,12 +32,12 @@
                         },
                         success: function (data) {
                             var jsonReponse=JSON.parse(data);
+
                             var convertion = jsonReponse.query.results.row.col1;
                             var amont =$('#amount').val();
+
                             $('#conversion').html(convertion);
-
                             $('#resultat').val(convertion*amont);
-
                         }
                     });
 

@@ -22,7 +22,7 @@
     color: #EEEEEE;
 }
 .margin{
-    margin: 50px 0 20px 0
+    margin: 50px 0 20px 0;
 }
 
 #contenu{
@@ -37,7 +37,7 @@
     background-color: #002d4d;
     color: #EEEEEE;
     padding: 20px 0 20px 0;
-    width: 50%;
+    width: 75%;
     margin: 0 auto 20px auto;
     display: none;
 }

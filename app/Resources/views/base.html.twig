@@ -38,11 +38,16 @@
 
                             $('#conversion').html(convertion);
                             $('#resultat').val(convertion*amont);
+
+                            $('#monaieDepart').html($('#from').val());
+                            $('#monaieFin').html($('#to').val());
+                            $('#affichage').show();
                         }
                     });
 
                     return false;
                 });
+
             });
             </script>
         {% endblock %}

@@ -41,3 +41,13 @@
     margin: 0 auto 20px auto;
     display: none;
 }
+
+#affichage p{
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+#affichage p:first-child{
+    font-size: 2em;
+    font-weight: 700;
+}

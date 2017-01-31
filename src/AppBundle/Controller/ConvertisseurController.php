@@ -12,7 +12,13 @@ class ConvertisseurController extends Controller
 {
     public function indexAction()
     {
-        return $this->render(':default:index.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+        $tpWebservices = $em->getRepository('AppBundle:TpWebservice')->findAll();
+
+        return $this->render(':default:index.html.twig',[
+            'tpWebservices' => $tpWebservices,
+        ]);
     }
 
     public function saveAction(Request $request)

@@ -1,7 +1,19 @@
 
 convert:
-    path:     /convert
+    path:     /convertir
     defaults: { _controller: AppBundle:Convertisseur:convert }
+
+convert_new:
+    path:     /convertir/{From}-{To}/{Amount}
+    defaults: { _controller: AppBundle:Convertisseur:convert }
+
+save:
+    path:     /save/{From}-{To}/{Amount}
+    defaults: { _controller: AppBundle:Convertisseur:save }
+
+update:
+    path:     /update-convertions/
+    defaults: { _controller: AppBundle:Convertisseur:update }
 
 index:
     path:     /

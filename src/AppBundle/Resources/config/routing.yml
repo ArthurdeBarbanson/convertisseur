@@ -18,3 +18,7 @@ update:
 index:
     path:     /
     defaults: { _controller: AppBundle:Convertisseur:index }
+
+app_tpwebservice:
+    resource: "@AppBundle/Resources/config/routing/tpwebservice.yml"
+    prefix:   /tpwebservice

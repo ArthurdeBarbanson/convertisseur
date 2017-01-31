@@ -1,0 +1,24 @@
+tpwebservice_index:
+    path:     /
+    defaults: { _controller: "AppBundle:TpWebservice:index" }
+    methods:  GET
+
+tpwebservice_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:TpWebservice:show" }
+    methods:  GET
+
+tpwebservice_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:TpWebservice:new" }
+    methods:  [GET, POST]
+
+tpwebservice_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:TpWebservice:edit" }
+    methods:  [GET, POST]
+
+tpwebservice_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:TpWebservice:delete" }
+    methods:  DELETE

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tpwebservice</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tpWebservice.id }}</td>
+            </tr>
+            <tr>
+                <th>Monnaie</th>
+                <td>{{ tpWebservice.monnaie }}</td>
+            </tr>
+            <tr>
+                <th>Value</th>
+                <td>{{ tpWebservice.value }}</td>
+            </tr>
+            <tr>
+                <th>Maj</th>
+                <td>{% if tpWebservice.maj %}{{ tpWebservice.maj|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tpwebservice_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tpwebservice_edit', { 'id': tpWebservice.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

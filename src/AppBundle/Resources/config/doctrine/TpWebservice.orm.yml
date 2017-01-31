@@ -1,0 +1,20 @@
+AppBundle\Entity\TpWebservice:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TpWebserviceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        monnaie:
+            type: string
+            length: '7'
+            unique: true
+        value:
+            type: integer
+        maj:
+            type: datetime
+    lifecycleCallbacks: {  }

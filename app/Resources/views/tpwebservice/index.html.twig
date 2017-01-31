@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tpwebservices list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Monnaie</th>
+                <th>Value</th>
+                <th>Maj</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tpWebservice in tpWebservices %}
+            <tr>
+                <td><a href="{{ path('tpwebservice_show', { 'id': tpWebservice.id }) }}">{{ tpWebservice.id }}</a></td>
+                <td>{{ tpWebservice.monnaie }}</td>
+                <td>{{ tpWebservice.value }}</td>
+                <td>{% if tpWebservice.maj %}{{ tpWebservice.maj|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tpwebservice_show', { 'id': tpWebservice.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tpwebservice_edit', { 'id': tpWebservice.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tpwebservice_new') }}">Create a new tpWebservice</a>
+        </li>
+    </ul>
+{% endblock %}
